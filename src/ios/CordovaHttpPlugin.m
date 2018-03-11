@@ -173,6 +173,10 @@
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
 
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
+
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
 
@@ -210,6 +214,10 @@
     [self setRequestHeaders: headers forManager: manager];
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
+
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
 
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
@@ -249,6 +257,10 @@
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
 
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
+
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
 
@@ -287,6 +299,10 @@
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
 
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
+
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
 
@@ -324,6 +340,10 @@
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
 
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
+
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
 
@@ -358,6 +378,10 @@
     [self setRequestHeaders: headers forManager: manager];
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
+
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
 
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -399,6 +423,10 @@
     [self setRequestHeaders: headers forManager: manager];
     [self setTimeout:timeoutInSeconds forManager:manager];
     [self setRedirect: manager];
+
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
+    }
 
     CordovaHttpPlugin* __weak weakSelf = self;
     manager.responseSerializer = [TextResponseSerializer serializer];
@@ -451,6 +479,10 @@
 
     if ([filePath hasPrefix:@"file://"]) {
         filePath = [filePath substringFromIndex:7];
+    }
+
+    if ([headers objectForKey:@"cookies"]) {
+      [manager.requestSerializer setValue:[headers objectForKey:@"cookies"] forHTTPHeaderField:@"Cookie"];
     }
 
     CordovaHttpPlugin* __weak weakSelf = self;
